@@ -1,0 +1,13 @@
+<div class="card">
+  <img [src]="product.thumbnail" class="img-fluid"/>
+  <div class="card-body">
+    <h1>ID: {{id}}</h1>
+    <h2>{{product.title}}</h2>
+    <p>Price: {{product.price}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col" *ngFor="let img of product.images">
+    <img [src]="img" class="img-fluid"/>
+  </div>
+</div>
