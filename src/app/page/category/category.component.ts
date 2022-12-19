@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import {Adapters} from "../../enums/adapters";
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector:'category',
@@ -8,9 +10,9 @@ import {HttpClient} from "@angular/common/http";
   styleUrls:['./category.component.css']
 })
 export class CategoryComponent{
-  sl:number=5;
   products: any = [];
-  constructor(private http: HttpClient) {
+  limit: number= Adapters.LIMIT;
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(){
@@ -19,16 +21,12 @@ export class CategoryComponent{
 
   /// call API: https://dummyjson.com/products/ + this.id
   getProducts(){
-    //call api
-    const  url = 'https://dummyjson.com/products?limit='+this.sl;
-    this.http.get<any>(url).subscribe(data=>{
-      //set data to product
+    this.productService.getProducts(this.limit).subscribe(data=>{
       this.products = data.products;
     })
-    //st data to product
   }
   loadMore(){
-    this.sl+=10;
+    this.limit+=10;
     this.getProducts();
   }
 }
