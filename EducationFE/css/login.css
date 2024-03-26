@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.login-page .text {
+  margin-bottom: 90px;
+}
+
+.login-page h1 {
+  color: #008fd5;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+form input {
+  height: 55px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  padding: 0 14px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #008fd5;
+}
+
+::placeholder {
+  color: #777;
+  font-size: 1.063rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.link .login {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #008fd5;
+  padding: 15px 0;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.link .login:hover {
+  background: #0866ff;
+  
+}
+
+form a {
+  text-decoration: none;
+}
+
+.link .forgot {
+  color: #008fd5;
+  font-size: 0.875rem;
+}
+
+.link .forgot:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    
+  }
+  
+  /* Áp dụng CSS chỉ cho phần tử có lớp .checkbox-container */
+  .checkbox-container .checkbox {
+    width: 1rem;
+    align-self: flex-start;
+    margin-right: 5px; /* Để tạo khoảng cách giữa ô checkbox và chữ Remember me */
+  }
+  
+  .checkbox-container label {
+    font-size: 1rem; /* Đặt kích thước chữ cho Remember me */
+  }
