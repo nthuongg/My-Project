@@ -1,0 +1,197 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: #f0f2f5;  
+}
+
+h1{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 35px;
+    margin-top: 20px;
+    color: #008fd5;
+}
+
+.studentForm{
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.studentForm header .filterEntries{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.filterEntries .entries select, .filterEntries .filter input{
+    padding: 7px 10px;
+    border: 1px solid #333;
+    color: #333;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.filterEntries .entries select{
+    padding: 5px 10px;
+}
+
+.filterEntries .filter{
+    display: flex;
+    align-items: center;
+}
+
+.filter label{
+    
+    margin-right: 5px;
+}
+
+
+.filter input:focus{
+    border: 1px solid #008fd5;
+}
+
+.studentForm header .addStudentBtn {
+    margin-bottom: 15px;
+}
+
+header .addStudentBtn button{
+    padding: 9px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid #008fd5;
+    background: #008fd5;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.addStudentBtn button:hover{
+    background: #f0f2f5;
+    color: black;
+}
+
+
+.studentForm table{
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.heading {
+    max-height: 50px;
+}
+table .heading{
+    background: #008fd5; 
+    color: #fff;
+}
+
+
+table tr th, table tr td{
+    padding:3px 15px;
+    vertical-align: middle;
+}
+
+table tr th{
+    padding: 12px 15px;
+}
+
+table tr td:nth-child(1), table tr td:nth-child(2), table tr td:nth-child(8){
+    text-align: center;
+}
+
+table tr td img{
+    vertical-align: middle;
+}
+table tr:hover:not(.heading){
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+table tr td{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+table tbody tr:nth-child(odd):not(.heading){
+    background: #008ed529;
+}
+
+table tr td{
+    font-size: 15px;
+}
+
+.studentForm footer{
+    margin-top: 25px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.studentForm footer span{
+    color: rgba(5, 5, 5, 0.734);
+}
+
+footer .pagination{
+    display: flex;
+}
+
+
+footer .pagination button{
+    width: 40px;
+    padding: 5px 0;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid #008fd5;
+    border-left: none;
+    margin: 0;
+}
+
+.pagination button:first-child{
+    width: 85px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid #008fd5;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination button:last-child{
+    width: 85px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination button.active, .pagination button:hover{
+    background: #008fd5;
+}
+
+
+
+
+
+

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form input</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/input.css">
 </head>
 <body>
@@ -12,42 +12,44 @@
     <h2>Student Information</h2>
     <form id="studentForm">
       <div class="form-group">
-        <label for="fullName">Full Name:</label>
+        <label for="fullName">Full Name: <span id="fullName-error" class="error"></span></label>
         <input type="text" id="fullName" name="fullName" class="form-control" required>
       </div>
       
       <div class="form-group">
-        <label for="class">Class:</label>
+        <label for="class">Class: <span id="class-error" class="error"></span></label>
         <input type="text" id="class" name="class" class="form-control" required>
       </div>
     
       <div class="form-group">
-        <label for="studentID">Student ID (7-digit number):</label>
+        <label for="studentID">Student ID (7-digit number): <span id="studentID-error" class="error"></span></label>
         <input type="text" id="studentID" name="studentID" pattern="[0-9]{7}" class="form-control" required>
       </div>
     
       <div class="form-group">
-        <label for="score">Score:</label>
+        <label for="score">Score: <span id="score-error" class="error"></span></label>
         <input type="number" id="score" name="score" min="0" max="10" step="0.1" class="form-control" required>
       </div>
     
       <div class="form-group">
-        <label for="schoolYear">School Year:</label>
+        <label for="schoolYear">School Year: <span id="schoolYear-error" class="error"></span></label>
         <input type="text" id="schoolYear" name="schoolYear" class="form-control" required>
+        
       </div>
     
       <div class="form-group">
       <label for="studentImage">Student Image:</label>
-      <input type="file" id="studentImage" name="studentImage" accept="image/*">
+      <input type="file" id="studentImage" name="studentImage" accept="image/*" required>
       </div>
       
     
-        <button type="submit">Submit</button>
+        <button onclick="save()">Submit</button>
      
       
     </form>
   </div>
-<script src="js/input.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="js/student.js"></script>
 
 </body>
 </html>

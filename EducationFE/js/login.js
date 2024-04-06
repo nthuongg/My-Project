@@ -2,34 +2,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const rememberCheckbox = document.getElementById("remember-checkbox");
     const loginForm = document.getElementById("login-form");
 
-    // Load username from localStorage if available
-    if (localStorage.getItem("username")) {
-        loginForm.elements.username.value = localStorage.getItem("username");
+    // Nếu có tên người dùng được lưu trong localStorage, load vào form
+    if (localStorage.getItem("email")) {
+        loginForm.elements.email.value = localStorage.getItem("email");
         rememberCheckbox.checked = true;
     }
 
-    // Function to handle checkbox change
+    // Hàm xử lý sự kiện thay đổi của checkbox
     rememberCheckbox.addEventListener("change", function () {
         if (this.checked) {
-            localStorage.setItem("username", loginForm.elements.username.value);
+            localStorage.setItem("email", loginForm.elements.email.value);
         } else {
-            localStorage.removeItem("username");
+            localStorage.removeItem("email");
         }
     });
 
-    // Function to handle form submission
+    // Hàm xử lý sự kiện khi form được submit
     loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); // Ngăn chặn việc submit form mặc định
 
-        // Perform login logic here (e.g., send data to server)
-        const username = loginForm.elements.username.value;
+        // Lấy giá trị email và password từ form
+        const email = loginForm.elements.email.value;
         const password = loginForm.elements.password.value;
 
-        // Example: Log the username and password to console
-        console.log("Username:", username);
-        console.log("Password:", password);
+        // Thực hiện logic đăng nhập
+        const validEmail = "user1@admin.com";
+        const validPassword = "password1";
 
-        // Clear the form after submission
-        loginForm.reset();
+        if (email === validEmail && password === validPassword) {
+            // Xóa form sau khi đăng nhập thành công
+            loginForm.reset();
+
+            // Chuyển hướng về trang chủ
+            window.location.href = "studentManagement.html";
+            // Thiết lập cờ isLoggedIn trong localStorage
+            localStorage.setItem("isLoggedIn", "true");
+        } else {
+            alert("Incorrect username or password. Please try again.");
+        }
     });
 });

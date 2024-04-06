@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript CURD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/view.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body onload="renderListStudent()">
+    
+    <div class="studentForm" id="list-student">
+
+        <header>
+            <h1>List of Students</h1>
+
+            <div class="filterEntries">
+                <div class="entries">
+                    Show <select name="" id="table_size">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> entries
+                </div>
+
+                <div class="filter">
+                    <label for="search">Search:</label>
+                    <input type="search" name="" id="search" placeholder="Enter name/student ID">
+                </div>
+            </div>
+
+            <div class="addStudentBtn">
+                <button>Add Student</button>
+            </div>
+
+        </header>
+
+
+        <table id="grid-students">
+
+            <thead>
+                <tr class="heading">
+          
+                </tr>
+                <!-- <tr class="heading">
+                    <th>SL No</th>
+                    <th>Picture</th>
+                    <th>Full Name</th>
+                    <th>Class</th>
+                    <th>Student ID</th>
+                    <th>Score</th>
+                    <th>School Year</th>
+                </tr> -->
+            </thead>
+
+
+            <tbody class="userInfo">
+                <!-- <tr><td class="empty" colspan="11" align="center">No data available in table</td></tr> -->
+                <!-- <tr>
+                    <td>1</td>
+                    <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
+                    <td>Nguyen Van An</td>
+                    <td>t2210</td>
+                    <td>2210</td>
+                    <td>10</td>
+                    <td>2024</td>
+
+                </tr>
+                
+                <tr>
+                    <td>1</td>
+                    <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
+                    <td>Nguyen Van An</td>
+                    <td>t2210</td>
+                    <td>2210</td>
+                    <td>10</td>
+                    <td>2024</td>                    
+                </tr> -->
+            </tbody>
+
+        </table>
+
+
+        <footer>
+            <span class="showEntries">Showing 1 to 10 of 50 entries</span>
+            <div class="pagination">
+                <button>Prev</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="js/student.js"></script>
+</body>
+</html>

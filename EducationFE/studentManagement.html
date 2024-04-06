@@ -10,10 +10,7 @@
 
 </head>
 <body>
-     <!-- Form input -->
-     <div id="inputForm" class="hidden">
-        <!-- Đặt form input vào đây -->
-    </div>
+    
     <section class="header">
         <div class="header-content">
             <img 
@@ -28,8 +25,8 @@
             <ul class="menu-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">View</a></li>
-                <li><a href="input.html" onclick="showInputForm()">Input</a></li>
+                <li><a href="view.html" id="view">View</a></li>
+                <li><a href="input.html" id="input" onclick="showInputForm()">Input</a></li>
                 <li><a href="login.html" onclick="showLoginForm()">Login</a></li>
             </ul>
         </nav>
@@ -75,6 +72,38 @@
             </p>
         </div>
     </section>
-   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputLink = document.getElementById("input");
+            const viewLink = document.getElementById("view");
+        
+            inputLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
+        
+                // Kiểm tra xem người dùng đã đăng nhập chưa
+                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        
+                if (isLoggedIn) {
+                    window.location.href = "input.html"; // Chuyển hướng đến trang Input
+                } else {
+                    alert("You need to log in to use this feature.");
+                }
+            });
+        
+            viewLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
+        
+                // Kiểm tra xem người dùng đã đăng nhập chưa
+                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        
+                if (isLoggedIn) {
+                    window.location.href = "view.html"; // Chuyển hướng đến trang View
+                } else {
+                    alert("You need to log in to use this feature.");
+                }
+            });
+        });
+        </script>
+        
 </body>
 </html>
