@@ -73,7 +73,7 @@ h1{
     margin-bottom: 15px;
 }
 
-header .addStudentBtn button{
+header .addStudentBtn a{
     padding: 9px 14px;
     font-size: 16px;
     cursor: pointer;
@@ -83,9 +83,11 @@ header .addStudentBtn button{
     background: #008fd5;
     border-radius: 5px;
     color: #fff;
+    text-decoration: none;
 }
 
-.addStudentBtn button:hover{
+.addStudentBtn a:hover{
+    text-decoration: none;
     background: #f0f2f5;
     color: black;
 }
