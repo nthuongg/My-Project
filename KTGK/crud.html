@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/crud.css">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit(event)">
+                    <div>
+                        <label for="studentID">Mã Sinh Viên:</label>
+                        <input type="text" id="studentID" name="studentID" placeholder="Nhập Mã Sinh Viên" required>
+                    </div>
+                    <div>
+                        <label for="studentName">Tên Sinh Viên:</label>
+                        <input type="text" id="studentName" name="studentName" placeholder="Nhập Tên Sinh Viên" required>
+                    </div>
+                    <div class="form_action--button">
+                        <input type="submit" value="Lưu" />
+                        <input type="reset" value="Hủy" />
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="storeList">
+                    <thead>
+                        <tr>
+                            <th>Mã Sinh Viên</th>
+                            <th>Tên Sinh Viên</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu sinh viên sẽ được thêm vào đây -->
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+<script src="js/crud.js"></script>
+
+</html>

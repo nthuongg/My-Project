@@ -9,9 +9,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/login.js"></script>
+    <script>
+        function showLoginForm() {
+            var overlay = document.getElementById("overlay");
+            var loginForm = document.getElementById("login-form-container");
+            overlay.style.display = "block";
+            loginForm.style.display = "block";
+        }
+
+        function hideLoginForm() {
+            var overlay = document.getElementById("overlay");
+            var loginForm = document.getElementById("login-form-container");
+            overlay.style.display = "none";
+            loginForm.style.display = "none";
+        }
+    </script>
 </head>
 <body>
-    
+    <div id="overlay" class="overlay" onclick="hideLoginForm()"></div>
+
     <section class="header">
         <div class="header-content">
             <img 
@@ -24,22 +40,25 @@
         
         <nav class="main-menu">
             <ul class="menu-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="view.html" id="view">View</a></li>
-                <li><a href="input.html" id="input" onclick="showInputForm()">Input</a></li>
-                <li><a href="login.html" onclick="showLoginForm()">Login</a></li>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Xem thông tin</a></li>
+                <li><a href="crud.html" id="crudLink">Quản Lí Học Viên</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#" id="loginLink">Đăng nhập</a></li>
             </ul>
         </nav>
     </section>
     <main class="body-content">
-        <!-- <img
+        <img
             src="images/imgSchool.jpg"
             alt=""
             class="body-content"
-        /> -->
-        <div class="login">
-            <form id="login-form" action="#">
+        />
+
+        <!-- Đăng nhập -->
+        <div class="login" id="login-form-container" style="display: none;">
+            <form id="login-form" action="#" class="login-form">
             <input type="email" id="email-input" name="email" placeholder="Nhập email">
             <input type="password" name="password" placeholder="Mật khẩu" required>
             <label class="checkbox-container">
@@ -86,38 +105,7 @@
             </p>
         </div>
     </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const inputLink = document.getElementById("input");
-            const viewLink = document.getElementById("view");
-        
-            inputLink.addEventListener("click", function (event) {
-                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
-        
-                // Kiểm tra xem người dùng đã đăng nhập chưa
-                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        
-                if (isLoggedIn) {
-                    window.location.href = "input.html"; // Chuyển hướng đến trang Input
-                } else {
-                    alert("You need to log in to use this feature.");
-                }
-            });
-        
-            viewLink.addEventListener("click", function (event) {
-                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
-        
-                // Kiểm tra xem người dùng đã đăng nhập chưa
-                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        
-                if (isLoggedIn) {
-                    window.location.href = "view.html"; // Chuyển hướng đến trang View
-                } else {
-                    alert("You need to log in to use this feature.");
-                }
-            });
-        });
-        </script>
+    
         
 </body>
 </html>
