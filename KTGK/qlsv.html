@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/qlsv.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+    
+    <section class="header">
+        <div class="header-content">
+            <img 
+                src="https://lms.cmc-u.edu.vn/accounts/1/files/102/download?verifier=BeV4CXN2mA2gbKFULNw42sk8ql4fubavsHvSaDOO" 
+                alt="Banner Image" 
+                class="logo"
+            />
+            <h1 class="site-title">Welcome to CMC</h1>
+        </div>
+        
+        <nav class="main-menu">
+            <ul class="menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="view.html" id="view">View</a></li>
+                <li><a href="input.html" id="input" onclick="showInputForm()">Input</a></li>
+                <li><a href="login.html" onclick="showLoginForm()">Login</a></li>
+            </ul>
+        </nav>
+    </section>
+    <main class="body-content">
+        <!-- <img
+            src="images/imgSchool.jpg"
+            alt=""
+            class="body-content"
+        /> -->
+        <div class="login">
+            <form id="login-form" action="#">
+            <input type="email" id="email-input" name="email" placeholder="Nhập email">
+            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <label class="checkbox-container">
+                <input type="checkbox" id="remember-checkbox" class="checkbox"> Remember me
+            </label>
+            <div class="link">
+                <button type="submit" class="login">Login</button>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+        </form>
+        </div>
+    </main>
+    <section class="footer">
+        <div class="col1">
+            <h2 style="font-weight:600;">Follow us</h2>
+            <div class="social-icons">
+                <p>
+                    <i class="bi bi-facebook"></i> Facebook
+                </p>
+                <p>
+                    <i class="bi bi-twitter"></i> Twitter
+                </p>
+                <p>
+                    <i class="bi bi-youtube"></i> YouTube
+                </p>
+                <p>
+                    <i class="bi bi-instagram"></i> Instagram
+                </p>
+                <p>
+                    <i class="bi bi-tiktok"></i> TikTok
+                </p> 
+            </div>
+        </div>
+        <div class="col2">
+            <h2 style="font-weight:600;">Contact Information</h2>
+            <p>
+                <i class="bi bi-geo-alt-fill"></i> Van Phuc - Ha Dong - Hanoi
+            </p>
+            <p>
+                <i class="bi bi-envelope-fill"></i> cmcuni@gmail.com
+            </p>
+            <p>
+                <i class="bi bi-telephone-fill"></i> 0123456789
+            </p>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputLink = document.getElementById("input");
+            const viewLink = document.getElementById("view");
+        
+            inputLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
+        
+                // Kiểm tra xem người dùng đã đăng nhập chưa
+                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        
+                if (isLoggedIn) {
+                    window.location.href = "input.html"; // Chuyển hướng đến trang Input
+                } else {
+                    alert("You need to log in to use this feature.");
+                }
+            });
+        
+            viewLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Ngăn chặn chuyển hướng mặc định
+        
+                // Kiểm tra xem người dùng đã đăng nhập chưa
+                const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        
+                if (isLoggedIn) {
+                    window.location.href = "view.html"; // Chuyển hướng đến trang View
+                } else {
+                    alert("You need to log in to use this feature.");
+                }
+            });
+        });
+        </script>
+        
+</body>
+</html>
